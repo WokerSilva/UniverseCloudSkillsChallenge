@@ -1,0 +1,38 @@
+\section{Inicio de un proyecto}
+
+\begin{enumerate}
+    \item Estando dentro de la carpeta Cats:
+    \begin{verbatim}
+        touch index.html
+    \end{verbatim}
+    Creación de un archivo
+    \item Usar \myBox{sun}{git status} para ver el estado del árbol de trabajo
+    \item Ahora usar 
+    \begin{verbatim}
+        git add .
+    \end{verbatim}
+    para agregar el nuevo archivo al índice de Git, el punto al final es para agregar todo lo que no tiene seguimiento
+    \item Volver a usar un \myBox{sun}{git status}
+    \item Realización de la primera confirmación
+    \begin{itemize}
+        \item Utilizar el comando siguiente para crear otra confirmación:
+        \begin{verbatim}
+            git commit -m "Añadiendo archivo index.html"
+        \end{verbatim}
+        \item \myBox{sun}{git status} Para ver que todo salió bien
+        \item \myBox{sun}{git log} Para mostrar la información del commit
+    \end{itemize}
+    \item Modifique index.html y confirme el cambio.
+    \item Usando \myBox{Cyan}{code index.html} se abre en VSC el archivo, así mismo si se usa \myBox{Cyan}{code .} en una carpeta se abre toda la carpeta
+    \item Modificamos el archivo
+    \item Ahora usamos el comando:
+    \begin{verbatim}
+        git commit -a -m "Add a heading to index.html"
+    \end{verbatim}
+    \begin{itemize}
+        \item No se ha usado \myBox{sun}{git add}
+        \item Usamos la marca \myBox{sun}{-a} para agregar los archivos modificados desde la última confirmación. No nuevos
+    \end{itemize}
+    \item Ahora volvemos a modificar el html
+    \item Usando el comando \myBox{sun}{git diff} para ver lo que ha cambiado
+\end{enumerate}
