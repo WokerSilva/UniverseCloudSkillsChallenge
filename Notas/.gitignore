@@ -1,0 +1,9 @@
+# Archivos de la compilación de Latex
+*.vscode
+*.aux
+*.bcf
+*.log
+*.out
+*.run.xml
+IMA/
+Portada/
