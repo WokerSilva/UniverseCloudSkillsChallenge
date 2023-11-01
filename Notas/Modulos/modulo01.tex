@@ -1,0 +1,164 @@
+\section{Introducción a Git}
+
+%/////////////////////////////////////////////
+%///////////////////////////////////////////
+%/////////////////////////////////////////
+\subsection{Importancia del Control de Versiones}
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+El control de versiones es esencial en el desarrollo de software, ya que permite gestionar los cambios en el código fuente
+y la colaboración entre desarrolladores de manera eficiente y segura. Git es un VCS de código abierto rápido, versátil, muy
+escalable y gratuito. Su autor principal es Linux Torvalds, creador de Linux. \\
+
+Imaginemos que estamos escribiendo un reporte de practica con nuestro equipo, seguramente a muchos nos paso que todos nos
+conectábamos al mismo tiempo escribiendo sobre el documento haciendo un mezcla en todo el texto, agregando referencias o 
+imágenes, incluso hasta borrando cosas de los demás. Usando control de versiones, cada modificación se registra,
+permitiendo ver quién hizo qué y cuándo.\\
+
+%/////////////////////////////////////////////
+%/////////////////////////////////////////////
+\titles{¿Qué ofrece un control de versiones?}
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+\begin{itemize}
+    \item \textbf{Historial de Cambios:} Un controlador de versiones mantiene un registro detallado de todos los cambios
+                                         realizados en el código a lo largo del tiempo, lo que permite rastrear quién hizo qué y cuándo.                                              
+    \item \textbf{Ramificación y Fusiones:} Permite la creación de ramas \textit{(branching)} para trabajar en nuevas características
+                                            o correcciones sin afectar la versión principal. Posteriormente, se pueden fusionar 
+                                            \textit{(mergear)} estas ramas de manera controlada.
+    \item \textbf{Recuperación de Versiones Anteriores:} Si surge un problema en una versión de software, es posible volver
+                                                         a una versión anterior para solucionar el problema rápidamente.
+    \item \textbf{Copias de Seguridad:} Los controladores de versiones actúan como una copia de seguridad automática del código fuente.
+                                        En el caso de Git, cada clon del repositorio es una copia completa del historial,
+                                        lo que garantiza la seguridad y la disponibilidad de los datos.
+    \item \textbf{Revisiones y Pruebas Colaborativas:} Los miembros del equipo pueden realizar revisiones de código de manera conjunta,
+                                                       identificar problemas y realizar pruebas en paralelo, acelerando el proceso de desarrollo.
+\end{itemize}
+
+%/////////////////////////////////////////////
+%/////////////////////////////////////////////
+\titles{Control de versiones distribuido}
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+Los sistemas de control de versiones centralizados, como \texttt{CVS, SVN} y \texttt{Perforce},
+almacenan el historial de un proyecto en un solo servidor. Esto puede ser un problema si el
+servidor falla o está inaccesible. Git es un sistema de control de versiones distribuido, 
+lo que significa que el historial de un proyecto se almacena en el cliente y en el servidor.
+Esto hace que Git sea más robusto y fiable que los sistemas centralizados.
+
+%/////////////////////////////////////////////
+%///////////////////////////////////////////
+%/////////////////////////////////////////
+\section{Terminología de Git}
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+\subsubsection*{Árbol de trabajo}
+
+Conjunto de directorios y archivos anidados que contienen el proyecto en el que se trabaja.
+
+\subsubsection*{Repositorio (repo):}
+Un repositorio, también conocido como repo, es un directorio situado en el nivel superior de un árbol de trabajo en Git,
+donde se almacena todo el historial y los metadatos de un proyecto. Puede haber repositorios vacíos, que no forman parte
+de un árbol de trabajo y se utilizan para compartir o realizar copias de seguridad. Un repositorio vacío generalmente es
+un directorio con un nombre que termina en \myBox{sun}{.git}, por ejemplo, project.git.
+
+\subsubsection*{Inicializar un Repo:} 
+Es el proceso de crear una nueva copia de trabajo de Git y asociarla con un remoto. Este proceso se puede realizar mediante
+el comando \myBox{sun}{git init}.
+
+\subsubsection*{Hash:}
+Un hash es un número generado por una función hash que representa el contenido de un archivo u otro objeto como un
+número de dígitos fijo. En Git, se utilizan hashes de 160 bits de longitud. La ventaja de los códigos hash en Git es
+que permiten verificar si un archivo ha cambiado mediante la comparación de su hash actual con el hash anterior. Si
+el contenido del archivo no cambia, aunque se modifique la marca de fecha y hora, el hash seguirá siendo el mismo.
+
+\subsubsection*{Objeto:}
+Un repositorio de Git contiene cuatro tipos de objetos, cada uno identificado de forma única por un hash SHA-1. 
+Un objeto blob contiene un archivo normal, un objeto árbol representa un directorio y contiene nombres, valores
+hash y permisos, un objeto de confirmación representa una versión específica del árbol de trabajo, y una etiqueta
+es un nombre asociado a una confirmación en Git.
+
+\subsubsection*{Confirmación:}
+El término \textit{confirmación} puede usarse como un verbo para referirse a la acción de crear un objeto
+de confirmación en Git. Esto implica guardar los cambios realizados en un proyecto para que otros usuarios puedan acceder a ellos.
+
+\subsubsection*{Rama:}
+Una rama en Git es una serie de confirmaciones vinculadas con un nombre. La confirmación más reciente en una rama
+se conoce como el nivel superior de esa rama. La rama predeterminada, que se crea al inicializar un repositorio,
+se llama \myBox{sun}{main} y suele tener el nombre \myBox{sun}{master} en Git. La rama actual se identifica como \myBox{sun}{HEAD}.
+Las ramas son una característica poderosa de Git que permite a los desarrolladores trabajar de forma independiente o colaborativa
+en diferentes ramas y luego fusionar los cambios en la rama predeterminada.
+
+\subsubsection*{Remoto:}
+Un remoto en Git es una referencia con nombre a otro repositorio de Git. Al crear un repositorio, Git generalmente 
+crea un remoto llamado \myBox{sun}{origin}, que es el remoto predeterminado para las operaciones de envío e incorporación de cambios.
+
+\subsubsection*{Comandos, subcomandos y opciones:}
+Las operaciones en Git se realizan mediante comandos, subcomandos y opciones. El comando principal,
+como \myBox{sun}{git push} o \myBox{sun}{git pull}, especifica la operación que se desea realizar. Los comandos suelen ir acompañados de 
+opciones que se utilizan con guiones (-) o guiones dobles (--). Por ejemplo, \myBox{sun}{git reset --hard} es un comando que
+implica un subcomando \myBox{sun}{reset} con la opción \myBox{sun}{--hard}.
+
+
+
+%/////////////////////////////////////////////
+%/////////////////////////////////////////////
+\titles{Git y GitHub}
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+Git es un sistema de control de versiones distribuido (DVCS) que varios desarrolladores y otros colaboradores pueden usar
+para trabajar en un proyecto. Proporciona una manera de trabajar con una o varias ramas locales y luego insertarlas en un repositorio remoto.\\
+
+GitHub es una plataforma en la nube que usa Git como tecnología principal. Simplifica el proceso de colaboración en
+proyectos y proporciona un sitio web, más herramientas de línea de comandos y un flujo integral que los desarrolladores
+y usuarios pueden usar para trabajar juntos. GitHub actúa como el repositorio remoto mencionado anteriormente.
+
+
+%/////////////////////////////////////////////
+%///////////////////////////////////////////
+%/////////////////////////////////////////
+\subsection{Configuración de Git}
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+\begin{itemize}
+    \item Para comprobar que Git está instalado, usar el comando \myBox{sun}{git --version}
+    \item Para configurar Git, se define por variables globales: user.name y user.email. Ambas necesarias para hacer confirmaciones.
+    \begin{verbatim}
+        git config --global user.name <USER_NAME>
+        git config --global user.email <USER_EMAIL>
+    \end{verbatim}    
+    \item Lista detallada de la configuración de GIT \myBox{sun}{git config --list}
+\end{itemize}
+
+%/////////////////////////////////////////////
+%/////////////////////////////////////////////
+\titles{Configuración del repositorio de Git}
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+\begin{enumerate}
+    \item Cree una carpeta, la cual será el directorio del proyecto y nos movemos a ella
+    \begin{verbatim}
+        mkdir Cats
+        cd Cats
+    \end{verbatim}
+    \item Inicializar el repositorio 
+    \begin{verbatim}
+        git init -b main
+    \end{verbatim}
+    \item Usando el comando 
+    \begin{verbatim}
+        git status
+    \end{verbatim}
+    para mostrar el estado del árbol de trabajo
+\end{enumerate}
