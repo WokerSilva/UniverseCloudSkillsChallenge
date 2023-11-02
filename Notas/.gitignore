@@ -8,3 +8,7 @@
 *.toc
 IMA/
 Portada/
+
+# Archivos dentro del reto
+*.bak
+*~

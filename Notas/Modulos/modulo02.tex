@@ -35,4 +35,78 @@
     \end{itemize}
     \item Ahora volvemos a modificar el html
     \item Usando el comando \myBox{sun}{git diff} para ver lo que ha cambiado
+    \item Añadiendo \myBox{sun}{.gitignore}
+    \item Con \myBox{sun}{git add -A} para agregar todos los archivos sin seguimiento 
+    \item Añadiendo subdirectorio
+    \begin{itemize}
+        \item Vamos a crear una carpeta
+        \begin{verbatim}
+            mkdir CSS
+            git status
+        \end{verbatim}
+        \item Git no considera directorios vacíos 
+        \item El comando \myBox{sun}{touch} sirve también para actualizar 
+        \begin{verbatim}
+            touch CSS/.git-keep
+            git add . CSS
+            git status
+        \end{verbatim}
+        \item Ahora si la carpeta se ve en el área de trabajo
+    \end{itemize}    
+    \item Remplazo de un archivo 
+    \begin{itemize}
+        \item Eliminar .git-kepp del subdirectorio
+        \begin{verbatim}
+            rm CSS/.git-keep
+            cd CSS
+            code . site.css
+        \end{verbatim}
+        Con esto habremos borrado el kepp, cambiado a la carpeta CSS y abierto VSC en el archivo para modificarlo        
+    \end{itemize}
+    \item Enumeración de confirmaciones
+    \begin{itemize}
+        \item Con el comando \myBox{sun}{git log} se revisan todas las confirmaciones
+        \item Con el comando \myBox{sun}{git log --oneline} se obtiene una lista más simplificada        
+    \end{itemize}
 \end{enumerate}
+
+%/////////////////////////////////////////////
+%/////////////////////////////////////////////
+\titles{Corrección de errores simples}
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+\textbf{Rectificación de una confirmación:}
+
+\begin{verbatim}
+    git commit --amend --no-edit
+\end{verbatim}
+
+Permite realizar cambios adicionales en el commit más reciente sin cambiar el mensaje de confirmación. Este comando es útil cuando te das cuenta de que olvidaste incluir algunos cambios en el commit anterior o cuando deseas realizar ajustes sin tener que cambiar el mensaje de confirmación. \\
+
+\textbf{Recuperación de un archivo eliminado:}
+
+\begin{verbatim}
+    git checkout -- <file_name>
+\end{verbatim}
+
+Se utiliza para descartar los cambios no confirmados en un archivo específico y restaurar ese archivo a su estado tal como se encuentra en el último commit.\\ 
+
+
+\textbf{Recuperación de archivos: (git reset)}
+También puede eliminar un archivo con \myBox{sun}{git rm}. Este comando elimina el archivo en el disco, pero también hace que Git registre su eliminación en el índice.
+
+\begin{verbatim}
+    git rm index.html
+    git checkout -- index.html
+\end{verbatim}
+
+Para recuperar index.html se usa \myBox{sun}{git reset}. Puede usar git reset para anular el almacenamiento provisional de los cambios.
+\begin{verbatim}
+    git reset HEAD index.html
+    git checkout -- index.html
+\end{verbatim}
+
+\textbf{Reversión de una confirmación: git revert}
+
+El comando \myBox{sun}{git revert} en Git se utiliza para deshacer un commit anterior, creando un nuevo commit que revierte los cambios realizados en el commit original. A diferencia de \myBox{sun}{git reset}, que reescribe la historia y elimina commits, \myBox{sun}{git revert} no reescribe la historia, sino que crea un nuevo commit que deshace los cambios del commit anterior. 
