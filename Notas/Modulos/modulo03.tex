@@ -1,0 +1,91 @@
+\section{Colaboración con Git}
+
+%/////////////////////////////////////////////
+%///////////////////////////////////////////
+%/////////////////////////////////////////
+\subsection*{Clonacion de un repositorio}
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+En Git, un repositorio se copia al clonarlo mediante el comando \myBox{sun}{git clone}. Puede
+clonar un repositorio independientemente de dónde esté almacenado, siempre que tenga una
+dirección URL o una ruta de acceso a la que apuntar. En Unix y Linux, la operación de clonación
+usa vínculos físicos, así que es rápida y usa un espacio mínimo, ya que solo hay que copiar las
+entradas de directorio, no los archivos.
+
+%/////////////////////////////////////////////
+%///////////////////////////////////////////
+%/////////////////////////////////////////
+\subsection*{Repositorio remoto}
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+Cuando se clona repositorio en Git, establece una referencia al repositorio original llamado
+\textit{origin}. Esto facilita la incorporación y envío de cambios. El comando utilizado es
+\myBox{sun}{git pull}, copia las confirmaciones y objetos nuevos del repositorio remoto al local.
+A diferencia de otros métodos como scp o Rsync, Git solo examina las confirmaciones, no todos
+los archivos.
+
+Git guarda la lista de confirmaciones obtenidas, y al usar \myBox{sun}{git pull}, solicita
+al repositorio remoto enviar solo los cambios, incluyendo nuevas confirmaciones y objetos.
+Estos se agrupan en un archivo llamado paquete y se envían en un lote. Luego, Git actualiza
+el árbol de trabajo al desempaquetar y combinar estos objetos con las confirmaciones locales.
+
+Es importante destacar que Git solo incorpora o envía cambios cuando el usuario lo indica, a
+diferencia de sistemas como Dropbox que dependen del sistema operativo para notificar cambios
+en la carpeta y consultan al servidor sobre posibles modificaciones de otros usuarios.
+
+%/////////////////////////////////////////////
+%///////////////////////////////////////////
+%/////////////////////////////////////////
+\subsection*{Creación de solicitudes de incorporación de cambios}
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+\myBox{sun}{git request-pull <inicio> <fin> <repositorio remoto>}
+
+Este comando en Git se utiliza para generar y enviar solicitudes formales de incorporación
+de cambios. Al especificar el rango de cambios entre dos puntos (inicio y fin) y el repositorio
+remoto destinatario, se crea una solicitud que incluye detalles sobre las modificaciones
+propuestas. Esto facilita el proceso de revisión y aceptación por parte del propietario del
+repositorio remoto, permitiendo una integración eficiente de contribuciones externas al proyecto.
+
+Supongamos que he estado trabajando en una nueva función en mi rama local llamada \textit{nueva-funcion}
+y quiero solicitar la incorporación de estos cambios al repositorio remoto llamado \textit{repositorio-remoto}.
+Utilizaría el comando git request-pull de la siguiente manera:
+
+
+\begin{itemize}
+    \item[] git request-pull
+    \begin{itemize}
+        \item[] origin/nueva-funcion
+        \item[] https://github.com/usuario/repositorio-remoto.git
+    \end{itemize}
+\end{itemize}
+  
+
+\begin{itemize}
+    \item[] origin/nueva-funcion: es la rama que contiene los cambios que deseo incorporar.
+    \item[] https://github.com/usuario/repositorio-remoto.git: es la URL del repositorio.
+\end{itemize}
+
+
+Este comando generaría un resumen de los cambios entre el estado actual de mi rama \textit{nueva-funcion}
+y su punto de inicio. Luego, puedo enviar este resumen al propietario del repositorio remoto para
+que revisen y consideren la incorporación de mis cambios al proyecto principal.
+
+
+
+
+%/////////////////////////////////////////////
+%///////////////////////////////////////////
+%/////////////////////////////////////////
+\subsection*{}
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
