@@ -1,0 +1,92 @@
+\section{Modulo 04}
+
+%/////////////////////////////////////////////
+%/////////////////////////////////////////////
+\titles{Edición de código mediante creación de ramas y combinación en Git}
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+\subsection*{Introducción}
+
+La gestión eficiente de código es esencial en el desarrollo de software, y Git se ha
+convertido en una herramienta fundamental en este proceso. La capacidad de trabajar
+en paralelo en diferentes características o soluciones, sin afectar el código principal, 
+es crucial para mantener la estabilidad y facilitar la colaboración entre desarrolladores. 
+En este contexto, la edición de código mediante la creación de ramas y su posterior 
+combinación en Git ofrece un enfoque estructurado y seguro para implementar nuevas 
+funcionalidades, corregir errores o realizar mejoras en un proyecto.
+
+\subsection*{Ramas en Git}
+
+Las ramas en Git son como líneas independientes de desarrollo que nos permiten trabajar 
+en diferentes aspectos de un proyecto de software de manera simultánea. Imagina el 
+código de tu proyecto como un árbol principal; una rama sería una bifurcación que se 
+origina desde el tronco principal. Esto nos brinda la flexibilidad de implementar 
+nuevas características, corregir errores o realizar mejoras sin afectar directamente
+el código base. 
+
+
+En términos sencillos, las ramas son como versiones paralelas de tu proyecto, donde
+puedes experimentar y hacer cambios sin preocuparte por afectar el código principal. 
+Esta funcionalidad es fundamental para el trabajo en equipo, ya que diferentes 
+desarrolladores pueden trabajar en ramas separadas, abordando distintas tareas al mismo 
+tiempo sin interferir entre sí.
+
+
+La utilidad principal de las ramas radica en su capacidad para facilitar el desarrollo 
+colaborativo. Al crear ramas, cada miembro del equipo puede concentrarse en una tarea 
+específica sin temor a afectar el trabajo de los demás. Posteriormente, estas ramas 
+pueden fusionarse de manera ordenada, combinando los cambios realizados de manera 
+coherente en el proyecto principal.
+
+\subsection*{Estructura y nomenclatura de las ramas}
+
+Cuando hablamos de la estructura y nomenclatura de las ramas en Git, es importante 
+comprender algunos términos clave que nos ayudarán a orientarnos en nuestro flujo 
+de trabajo. En diferentes plataformas y proyectos, la rama principal suele denominarse 
+main, master o trunk. Esta rama es como el tronco principal de nuestro árbol de 
+desarrollo y suele contener la versión estable y funcional de nuestro proyecto.
+
+
+Las ramas suelen originarse a partir de la rama principal. Al crear una nueva rama,
+estamos esencialmente bifurcando el desarrollo para trabajar en una funcionalidad 
+específica o resolver un problema particular. Estas nuevas ramas, también conocidas 
+como ramas secundarias, nos permiten realizar cambios sin afectar directamente el 
+código en la rama principal.
+
+\subsection*{Creación y modificación de ramas}
+
+Para crear una rama en Git, es tan sencillo como utilizar el comando git branch 
+seguido del nombre que le quieras dar a tu nueva rama. Por ejemplo, si quiero 
+trabajar en una nueva característica llamada nueva-funcionalidad, escribiría git branch
+nueva-funcionalidad. Luego, para empezar a trabajar en esa rama, simplemente 
+uso git checkout nueva-funcionalidad o el comando más reciente git switch 
+nueva-funcionalidad. Esto me coloca en mi nueva rama, listo para hacer cambios sin 
+afectar la rama principal.
+
+
+Cambiar entre ramas es igual de fácil. Si quiero volver a la rama principal, uso el 
+comando git checkout master o git switch master. Es un proceso rápido y me permite 
+alternar entre diferentes tareas o características.
+
+
+Cuando llega el momento de combinar las ramas, utilizo el comando git merge. Supongamos 
+que estoy en mi rama nueva-funcionalidad y quiero agregar los cambios a la rama 
+principal. Después de hacer mis cambios, vuelvo a la rama principal con git checkout 
+master o git switch master y escribo git merge nueva-funcionalidad. Esto fusiona los 
+cambios de mi rama nueva-funcionalidad con la rama principal.
+
+
+Ahora, evitar conflictos entre las ramas es clave. Git hace un gran trabajo fusionando 
+automáticamente los cambios cuando no hay conflictos. Sin embargo, si dos ramas 
+modifican la misma parte del código, podría haber un conflicto. Para prevenir esto, 
+es útil realizar fusiones frecuentes desde la rama principal a tu rama de desarrollo 
+para mantenerlas actualizadas y minimizar los posibles conflictos.
+
+
+Resolución de conflictos de combinación
+
+    git merge --abort
+    git reset --hard
+    Los desarrolladores parecen preferir la última opción. Cuando Git detecta un conflicto en las versiones del contenido, inserta ambas versiones del contenido en el archivo. Git usa un formato especial para ayudarle a identificar y resolver el conflicto: corchetes angulares de apertura <<<<<<<, guiones dobles (signos igual) ======= y corchetes angulares de cierre >>>>>>>. El contenido situado encima de la línea de guiones ======= muestra los cambios en la rama. El contenido que se encuentra debajo de la línea de separación muestra la versión del contenido de la rama en la que intenta realizar la combinación.
+
