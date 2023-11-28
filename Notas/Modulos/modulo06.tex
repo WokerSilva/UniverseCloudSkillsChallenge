@@ -1,18 +1,175 @@
-\section{Modulo 05}
+\section{Código con GitHub Codespaces}
 
-\titles{Código con GitHub Codespaces}
+GitHub Codespaces es un entorno de desarrollo totalmente configurado que se hospeda en la nube. Con GitHub
+Codespaces, el área de trabajo está disponible desde cualquier equipo con acceso a Internet, junto con 
+todos los entornos de desarrollo configurados.
 
-GitHub Codespaces es un entorno de desarrollo totalmente configurado que se hospeda en la nube. Con GitHub Codespaces, el área de trabajo está disponible desde cualquier equipo con acceso a Internet, junto con todos los entornos de desarrollo configurados.
-
+%/////////////////////////////////////////////
+%///////////////////////////////////////////
+%/////////////////////////////////////////
 \subsection*{Introducción}
-que es GitHub Codespaces?
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-\subsection*{Ciclo de vida de un codespace}
 
-\subsubsection*{Crear un codespace}
+Podemos pensar en ello como nuestro \textit{taller de desarrollo portátil}. Todo lo que se necesita
+para construir algo increíble, pero no está limitado a una ubicación específica. Es como llevar tu taller
+de desarrollo en la nube contigo a donde quieras. Esto significa que no tienes que perder tiempo
+configurando todo cada vez que cambias de computadora. GitHub Codespaces ya tiene todo preparado para
+que puedas concentrarte en lo que realmente importa: escribir código y construir cosas increíbles.
+
+%/////////////////////////////////////////////
+%///////////////////////////////////////////
+%/////////////////////////////////////////
+\subsection{Ciclo de vida de un codespace}
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+El ciclo de vida de un Codespace tiene varias etapas que hacen que trabajar en proyectos sea más
+fluido. Al crear un Codespace, estamos en la fase de \textit{Inicio}. Es como abrir nuestro espacio
+de desarrollo en la nube, listo para trabajar.
+
+Luego viene la fase de \textit{Desarrollo}. Aquí es donde realmente hacemos nuestra magia: escribimos código, realizamos
+cambios y hacemos todo lo necesario para que nuestro proyecto cobre vida.
+
+Cuando terminamos de trabajar, entramos en la fase de \textit{Suspensión}. Es como cerrar temporalmente nuestro espacio
+de desarrollo. La próxima vez que lo necesitemos, simplemente lo \textit{Reactivamos} y volvemos a donde lo dejamos,
+como si nunca nos hubiéramos ido.
+
+Finalmente, cuando ya no necesitamos el Codespace, llegamos a la fase de \textit{Eliminación}. Es como cerrar definitivamente
+nuestro taller de desarrollo en la nube. Esta estructura cíclica facilita la gestión de nuestros entornos de desarrollo,
+adaptándose a nuestras necesidades a lo largo del tiempo.
+
+\subsubsection{Crear un codespace}
+
 Puede crear un codespace en GitHub.com, en Visual Studio Code o en la CLI de GitHub. Existen cuatro formas de crear un codespace:
 
-Desde una plantilla de GitHub o desde cualquier repositorio de plantillas de GitHub.com para iniciar un nuevo proyecto.
-Desde una rama del repositorio para el trabajo de nuevas características.
-Desde una solicitud de cambios abierta para explorar el trabajo en curso.
-Desde una confirmación en el historial de un repositorio para investigar un error en un punto específico del tiempo.
+\begin{itemize}
+    \item Desde una plantilla de GitHub o desde cualquier repositorio de plantillas de GitHub.com para iniciar un nuevo proyecto.
+    \item Desde una rama del repositorio para el trabajo de nuevas características.
+    \item Desde una solicitud de cambios abierta para explorar el trabajo en curso.
+    \item Desde una confirmación en el historial de un repositorio para investigar un error en un punto específico del tiempo.
+\end{itemize}
+
+Puedes usar un Codespace temporalmente para realizar pruebas de código o regresar al mismo Codespace para trabajar
+ en características a largo plazo. Tienes la flexibilidad de crear varios Codespaces por repositorio o incluso por 
+ rama. Sin embargo, existe un límite en la cantidad de Codespaces que puedes crear y ejecutar simultáneamente. Si 
+ alcanzas este límite, deberás quitar o eliminar un Codespace existente antes de crear uno nuevo.
+
+Además, puedes decidir entre crear un nuevo Codespace cada vez que uses GitHub Codespaces o mantener uno a largo 
+plazo para una característica específica. Si estás comenzando un proyecto nuevo, puedes crear un Codespace a partir 
+de una plantilla y luego publicarlo en un repositorio de GitHub cuando estés listo. Esto brinda flexibilidad según 
+tus necesidades y facilita la gestión de tus entornos de desarrollo en GitHub Codespaces.
+
+\subsubsection*{Proceso de creación de un codespace}
+
+El proceso de creación de un Codespace es sencillo y proporciona un entorno de desarrollo listo para usar. Primero, 
+seleccionas el botón "Code" en tu repositorio de GitHub y eliges "Open with Codespaces". GitHub automáticamente crea 
+un entorno de desarrollo en la nube basado en la configuración de tu repositorio.
+
+Por ejemplo, si estás trabajando en un proyecto web, al abrir el Codespace, tendrás acceso a un entorno con las 
+versiones correctas del lenguaje de programación, las herramientas y las dependencias que necesitas. Puedes comenzar 
+a codificar de inmediato, sin preocuparte por la instalación o configuración del entorno.
+
+Este proceso es particularmente útil para probar cambios rápidos, colaborar en proyectos o simplemente para tener 
+un entorno de desarrollo consistente sin importar la máquina que estés utilizando. Es una forma eficiente y 
+conveniente de iniciar el desarrollo de proyectos en minutos.
+
+\titles{Pasos para la creación}
+\begin{enumerate}
+    \item \textbf{Navegar al Repositorio:}
+    \begin{itemize}
+        \item Accede al repositorio en GitHub donde deseas crear el Codespace.        
+    \end{itemize}
+    \item \textbf{Seleccionar Code y Open with Codespaces:}
+    \begin{itemize}
+        \item Haz clic en el botón "Code" en la página del repositorio.
+        \item Selecciona "Open with Codespaces" en el menú desplegable.
+    \end{itemize}
+    \item \textbf{Esperar a la Creación del Codespace:}
+    \begin{itemize}
+        \item GitHub iniciará el proceso de creación del Codespace. Este puede llevar unos minutos,
+                 dependiendo de la configuración de tu proyecto
+    \end{itemize}
+    \item \textbf{Acceder al Codespace:}
+    \begin{itemize}
+        \item Una vez creado, puedes acceder al Codespace directamente desde tu navegador web. GitHub te 
+                proporcionará un entorno de desarrollo totalmente funcional basado en la configuración 
+                de tu repositorio.
+    \end{itemize}
+    \item \textbf{Explorar y Codificar:}
+    \begin{itemize}
+        \item Dentro del Codespace, tendrás acceso a un entorno que incluye el código del repositorio, 
+                las dependencias, las extensiones y las configuraciones necesarias para trabajar en tu proyecto
+    \end{itemize}
+    \item \textbf{Realizar Cambios y Guardar:}
+    \begin{itemize}
+        \item Puedes comenzar a realizar cambios en el código directamente desde el entorno del 
+                Codespace. Los cambios se guardan automáticamente y puedes interactuar con el 
+                repositorio de GitHub como lo harías normalmente.
+    \end{itemize}
+    \item \textbf{Cierre y Persistencia (Opcional):}
+    \begin{itemize}
+        \item Si cierras la ventana del navegador o decides no usar el Codespace por un tiempo, GitHub 
+                guardará el estado actual. Puedes reanudar tu trabajo más tarde y continuar 
+                exactamente desde donde lo dejaste
+    \end{itemize}
+\end{enumerate}
+
+
+%/////////////////////////////////////////////
+%///////////////////////////////////////////
+%/////////////////////////////////////////
+\subsection{Personalizar su codespace}
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+GitHub Codespaces es un entorno dedicado. Puede configurar los repositorios con un contenedor 
+de desarrollo para definir su entorno predeterminado de GitHub Codespaces y personalizar la experiencia 
+de desarrollo en todos los codespaces con dotfiles y Sincronización de configuración.
+
+\titles{Qué se puede personalizar}
+
+\begin{itemize}
+    \item Sincronización de configuración: puede sincronizar la configuración de Visual Studio Code (VS Code) entre la aplicación de escritorio y el cliente web de VS Code.
+    \item Dotfiles: puede usar un repositorio dotfiles para especificar scripts, preferencias del shell y otras configuraciones.
+    \item Cambiar un codespace de nombre: al crear un codespace, se le asigna un nombre para mostrar generado automáticamente. Si tiene varios codespaces, el nombre para mostrar le ayuda a diferenciar entre ellos. Puede cambiar el nombre para mostrar del codespace.
+    \item Cambiar el shell: puede cambiar el shell en un codespace para mantener su configuración habitual. Al trabajar en un codespace, puede abrir una nueva ventana de terminal con un shell de su elección, cambiar el shell predeterminado para las nuevas ventanas de terminal o instalar un nuevo shell. También puedes usar dotfiles para configurar el shell.
+    \item Cambiar el tipo de máquina: puede cambiar el tipo de máquina que ejecuta el codespace para usar los recursos adecuados para el trabajo que lleva a cabo.
+    \item Establecer el editor predeterminado: puede establecer el editor predeterminado para codespaces en su página de configuración personal. Establezca el editor de su preferencia para que, al crear un codespace o abrir un codespace existente, se abra en el editor predeterminado.
+    \begin{itemize}
+        \item Visual Studio Code (aplicación de escritorio)
+        \item Visual Studio Code (aplicación cliente web)
+        \item JetBrains Gateway: para abrir codespaces en un IDE de JetBrains
+        \item JupyterLab (interfaz web para Project Jupyter)
+    \end{itemize}    
+    \item Establecer la región predeterminada: puede configurar la región predeterminada en la página de configuración de perfil de GitHub Codespaces para personalizar el lugar donde se conservan sus datos.
+    \item Establecer el tiempo de espera: un codespace dejará de ejecutarse después de un período de inactividad. De manera predeterminada, este período es de 30 minutos, pero puede especificar un período de tiempo de espera predeterminado más largo o más corto en su configuración personal en GitHub. La configuración actualizada se aplica a los codespaces que cree o a los ya existentes la próxima vez que los inicie.
+    \item Configuración de eliminación automática: los codespaces inactivos se eliminan de forma automática. Puede elegir cuánto tiempo se conservan los codespaces detenidos, hasta un máximo de 30 días.
+\end{itemize}
+
+\subsection{Codespaces versus GitHub.dev editor}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{p{4cm}p{5cm}p{5cm}}
+      \toprule
+      Característica & Codespaces & GitHub.dev Editor \\
+      \midrule
+      Creación de Entornos & En la nube, totalmente configurados & En el navegador, ligero \\
+      Accesibilidad & Desde cualquier lugar con conexión a Internet & En el navegador, sin instalación adicional \\
+      Configuración & Basada en el repositorio & No es persistente, se reinicia al cerrar la pestaña \\
+      Flexibilidad & Varias configuraciones por repositorio o rama & Limitado a un único proyecto por pestaña \\
+      Persistencia & Guarda el estado actual para reanudar más tarde & No persiste al cerrar la pestaña \\
+      Coste & Cuota mensual gratuita de uso para cuentas personales & Gratuito \\
+      Disponibilidad & Disponible para todos en GitHub.com & Disponible para todos en GitHub.com \\ 
+      Extensiones & Con GitHub Codespaces se pueden usar la mayoría de las extensiones de Visual Studio Code Marketplace. & En la vista de extensiones solo aparece un subconjunto de las extensiones que pueden ejecutarse en la web y que se pueden instalar. \\             
+      \bottomrule
+    \end{tabular}
+    \caption{Comparación entre Codespaces y GitHub.dev Editor.}
+    \label{tab:comparacion}
+\end{table}
+  
