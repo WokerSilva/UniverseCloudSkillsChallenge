@@ -18,20 +18,31 @@ def jugar_piedra_papel_tijeras(computadora, usuario):
         (computadora == "papel" and usuario == "piedra") or
         (computadora == "tijeras" and usuario == "papel")
     ):
-        return "¡La computadora a ganado!"
+        return "¡La computadora ha ganado!"
     else:
-        return "¡El usuario a ganado!"
+        return "¡El usuario ha ganado!"
 
-# Obtener la selección del usuario
-usuario = input("Elige piedra, papel o tijeras: ").lower()
+while True:
+    # Obtener la selección del usuario
+    usuario = input("Elige piedra, papel o tijeras (o 'salir' para salir): ").lower()
 
-# Generar la selección aleatoria de la computadora
-computadora = random.choice(["piedra", "papel", "tijeras"])
+    if usuario == 'salir':
+        print("¡Gracias por jugar! Hasta luego.")
+        break
 
-# Mostrar las selecciones de ambos jugadores
-print(f"Computadora eligió: {computadora}")
-print(f"Usuario eligió: {usuario}")
+    # Generar la selección aleatoria de la computadora
+    computadora = random.choice(["piedra", "papel", "tijeras"])
 
-# Determinar el resultado del juego
-resultado = jugar_piedra_papel_tijeras(computadora, usuario)
-print(resultado)
+    # Mostrar las selecciones de ambos jugadores
+    print(f"Computadora eligió: {computadora}")
+    print(f"Usuario eligió: {usuario}")
+
+    # Determinar el resultado del juego
+    resultado = jugar_piedra_papel_tijeras(computadora, usuario)
+    print(resultado)
+
+    # Preguntar al usuario si quiere jugar de nuevo
+    jugar_de_nuevo = input("¿Quieres jugar de nuevo? (si/no): ").lower()
+    if jugar_de_nuevo != 'si':
+        print("¡Gracias por jugar! Hasta luego.")
+        break
