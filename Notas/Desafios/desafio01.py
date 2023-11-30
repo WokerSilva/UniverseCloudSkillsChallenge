@@ -2,6 +2,11 @@
 ## Juego de piedra, papel o tijeras 
 import random
 
+# Inicializar variables de conteo
+victorias_computadora = 0
+victorias_usuario = 0
+empates = 0
+
 def jugar_piedra_papel_tijeras(computadora, usuario):
     # Definir las opciones válidas
     opciones = ["piedra", "papel", "tijeras"]
@@ -12,14 +17,23 @@ def jugar_piedra_papel_tijeras(computadora, usuario):
 
     # Determinar al ganador
     if computadora == usuario:
+        # Incrementar el contador de empates
+        global empates
+        empates += 1
         return "¡Es un empate!"
     elif (
         (computadora == "piedra" and usuario == "tijeras") or
         (computadora == "papel" and usuario == "piedra") or
         (computadora == "tijeras" and usuario == "papel")
     ):
+        # Incrementar el contador de victorias de la computadora
+        global victorias_computadora
+        victorias_computadora += 1
         return "¡La computadora ha ganado!"
     else:
+        # Incrementar el contador de victorias del usuario
+        global victorias_usuario
+        victorias_usuario += 1
         return "¡El usuario ha ganado!"
 
 while True:
@@ -40,6 +54,12 @@ while True:
     # Determinar el resultado del juego
     resultado = jugar_piedra_papel_tijeras(computadora, usuario)
     print(resultado)
+
+    # Mostrar estadísticas
+    print(f"\nEstadísticas:")
+    print(f"Victorias de la computadora: {victorias_computadora}")
+    print(f"Victorias del usuario: {victorias_usuario}")
+    print(f"Empates: {empates}\n")
 
     # Preguntar al usuario si quiere jugar de nuevo
     jugar_de_nuevo = input("¿Quieres jugar de nuevo? (si/no): ").lower()
